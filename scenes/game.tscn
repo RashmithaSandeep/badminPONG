@@ -1,0 +1,42 @@
+[gd_scene load_steps=11 format=3 uid="uid://cfo714bj4k5so"]
+
+[ext_resource type="Script" uid="uid://bs7eh3gwi33kx" path="res://scripts/game.gd" id="1_0tnpc"]
+[ext_resource type="Texture2D" uid="uid://27ex1bxq451s" path="res://assets/pongBackground.png" id="2_vtaks"]
+[ext_resource type="PackedScene" uid="uid://cdou6m7e5p55e" path="res://scenes/ball.tscn" id="3_kvpfn"]
+[ext_resource type="PackedScene" uid="uid://cxs247srrr6w6" path="res://scenes/wall_bottom.tscn" id="4_dinhu"]
+[ext_resource type="PackedScene" uid="uid://cr876b3akjlhu" path="res://scenes/wall_top.tscn" id="5_kvuet"]
+[ext_resource type="PackedScene" uid="uid://cousc31csna56" path="res://scenes/player_1.tscn" id="6_trtic"]
+[ext_resource type="PackedScene" uid="uid://dm6lwnkouk27o" path="res://scenes/player_2.tscn" id="7_ir15t"]
+[ext_resource type="PackedScene" uid="uid://d3csr8qbu1aot" path="res://scenes/goalLeft.tscn" id="8_ca42v"]
+[ext_resource type="Script" uid="uid://85w32cgopecx" path="res://scripts/player2.gd" id="8_vtaks"]
+[ext_resource type="PackedScene" uid="uid://dlur8c4hgsb2a" path="res://scenes/goalRight.tscn" id="9_rysoc"]
+
+[node name="game" type="Node2D"]
+script = ExtResource("1_0tnpc")
+
+[node name="background" type="Sprite2D" parent="."]
+z_index = -5
+position = Vector2(320, 180)
+scale = Vector2(0.555, 0.555)
+texture = ExtResource("2_vtaks")
+
+[node name="ball" parent="." instance=ExtResource("3_kvpfn")]
+
+[node name="walls" type="Node" parent="."]
+
+[node name="wallTop" parent="walls" instance=ExtResource("4_dinhu")]
+
+[node name="wallTop2" parent="walls" instance=ExtResource("5_kvuet")]
+
+[node name="players" type="Node" parent="."]
+
+[node name="player1" parent="players" instance=ExtResource("6_trtic")]
+
+[node name="player2" parent="players" instance=ExtResource("7_ir15t")]
+script = ExtResource("8_vtaks")
+
+[node name="goals" type="Node" parent="."]
+
+[node name="goalLeft" parent="goals" instance=ExtResource("8_ca42v")]
+
+[node name="goalRight" parent="goals" instance=ExtResource("9_rysoc")]

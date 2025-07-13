@@ -1,0 +1,13 @@
+[gd_scene load_steps=3 format=3 uid="uid://dlur8c4hgsb2a"]
+
+[ext_resource type="Script" uid="uid://cs7w3d2b7ysvc" path="res://scripts/goal.gd" id="1_ljcte"]
+
+[sub_resource type="RectangleShape2D" id="RectangleShape2D_tqipa"]
+size = Vector2(20, 360)
+
+[node name="goalRight" type="Area2D"]
+script = ExtResource("1_ljcte")
+
+[node name="goalCollision" type="CollisionShape2D" parent="."]
+position = Vector2(650, 180)
+shape = SubResource("RectangleShape2D_tqipa")
