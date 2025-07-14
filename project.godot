@@ -11,8 +11,13 @@ config_version=5
 [application]
 
 config/name="20 Games Challenge #1 - Pong (2nd Try)"
+run/main_scene="uid://cfo714bj4k5so"
 config/features=PackedStringArray("4.4", "GL Compatibility")
 config/icon="res://icon.svg"
+
+[autoload]
+
+ScoreManager="*res://scripts/managers/score_manager.gd"
 
 [display]
 

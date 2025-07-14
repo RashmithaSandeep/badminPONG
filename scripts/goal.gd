@@ -1,9 +1,8 @@
 extends Area2D
 
-@export var player_id = 2
+@export var player_name: String = "player1"
 
 func _on_body_entered(body):
-	if body.name == "ball" :
-		get_node("root/game").add_score(player_id)
-		body.position = Vector2(330, 180)
-		
+	if body.is_in_group("ball"):
+		ScoreManager.update_score(player_name)
+		body.reset_ball() 

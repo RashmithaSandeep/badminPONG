@@ -2,14 +2,14 @@
 
 [ext_resource type="Script" uid="uid://bs7eh3gwi33kx" path="res://scripts/game.gd" id="1_0tnpc"]
 [ext_resource type="Texture2D" uid="uid://27ex1bxq451s" path="res://assets/pongBackground.png" id="2_vtaks"]
-[ext_resource type="PackedScene" uid="uid://cdou6m7e5p55e" path="res://scenes/ball.tscn" id="3_kvpfn"]
-[ext_resource type="PackedScene" uid="uid://cxs247srrr6w6" path="res://scenes/wall_bottom.tscn" id="4_dinhu"]
-[ext_resource type="PackedScene" uid="uid://cr876b3akjlhu" path="res://scenes/wall_top.tscn" id="5_kvuet"]
-[ext_resource type="PackedScene" uid="uid://cousc31csna56" path="res://scenes/player_1.tscn" id="6_trtic"]
-[ext_resource type="PackedScene" uid="uid://dm6lwnkouk27o" path="res://scenes/player_2.tscn" id="7_ir15t"]
-[ext_resource type="PackedScene" uid="uid://d3csr8qbu1aot" path="res://scenes/goalLeft.tscn" id="8_ca42v"]
-[ext_resource type="Script" uid="uid://85w32cgopecx" path="res://scripts/player2.gd" id="8_vtaks"]
-[ext_resource type="PackedScene" uid="uid://dlur8c4hgsb2a" path="res://scenes/goalRight.tscn" id="9_rysoc"]
+[ext_resource type="PackedScene" uid="uid://cdou6m7e5p55e" path="res://scenes/entities/ball.tscn" id="3_kvpfn"]
+[ext_resource type="PackedScene" uid="uid://cxs247srrr6w6" path="res://scenes/entities/wall_bottom.tscn" id="4_dinhu"]
+[ext_resource type="PackedScene" uid="uid://cr876b3akjlhu" path="res://scenes/entities/wall_top.tscn" id="5_kvuet"]
+[ext_resource type="PackedScene" uid="uid://cousc31csna56" path="res://scenes/entities/player_1.tscn" id="6_trtic"]
+[ext_resource type="PackedScene" uid="uid://dm6lwnkouk27o" path="res://scenes/entities/player_2.tscn" id="7_ir15t"]
+[ext_resource type="PackedScene" uid="uid://d3csr8qbu1aot" path="res://scenes/entities/goalLeft.tscn" id="8_ca42v"]
+[ext_resource type="PackedScene" uid="uid://dlur8c4hgsb2a" path="res://scenes/entities/goalRight.tscn" id="9_rysoc"]
+[ext_resource type="PackedScene" uid="uid://i2opqqrry766" path="res://scenes/ui.tscn" id="10_vtaks"]
 
 [node name="game" type="Node2D"]
 script = ExtResource("1_0tnpc")
@@ -33,10 +33,14 @@ texture = ExtResource("2_vtaks")
 [node name="player1" parent="players" instance=ExtResource("6_trtic")]
 
 [node name="player2" parent="players" instance=ExtResource("7_ir15t")]
-script = ExtResource("8_vtaks")
 
 [node name="goals" type="Node" parent="."]
 
 [node name="goalLeft" parent="goals" instance=ExtResource("8_ca42v")]
 
 [node name="goalRight" parent="goals" instance=ExtResource("9_rysoc")]
+player_name = "player2"
+
+[node name="ui" parent="." instance=ExtResource("10_vtaks")]
+
+[connection signal="body_entered" from="goals/goalLeft" to="goals/goalLeft" method="_on_body_entered"]
