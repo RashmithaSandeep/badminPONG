@@ -6,11 +6,17 @@
 script = ExtResource("1_fyqef")
 
 [node name="HBoxContainer" type="HBoxContainer" parent="."]
-offset_right = 40.0
-offset_bottom = 40.0
+offset_left = 300.0
+offset_right = 340.0
+offset_bottom = 45.0
+alignment = 1
 
 [node name="player1Score" type="Label" parent="HBoxContainer"]
 layout_mode = 2
+theme_override_font_sizes/font_size = 32
+text = " 0"
 
 [node name="player2Score" type="Label" parent="HBoxContainer"]
 layout_mode = 2
+theme_override_font_sizes/font_size = 32
+text = "0 "

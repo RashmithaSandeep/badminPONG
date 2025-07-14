@@ -44,3 +44,4 @@ player_name = "player2"
 [node name="ui" parent="." instance=ExtResource("10_vtaks")]
 
 [connection signal="body_entered" from="goals/goalLeft" to="goals/goalLeft" method="_on_body_entered"]
+[connection signal="body_entered" from="goals/goalRight" to="goals/goalRight" method="_on_body_entered"]

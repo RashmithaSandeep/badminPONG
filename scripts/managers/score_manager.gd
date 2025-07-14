@@ -9,7 +9,8 @@ func update_score(player: String):
 		player1_score += 1
 	else:
 		player2_score += 1
-	emit_signal("score_updated", player1_score, player2_score) 
+	print("Scores: P1=", player1_score, " P2=", player2_score)
+	emit_signal("score_updated", player1_score, player2_score)
 
 func reset_scores():
 	player1_score = 0
