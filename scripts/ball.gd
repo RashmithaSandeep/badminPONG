@@ -8,7 +8,6 @@ func _ready():
 	reset_ball()
 
 func reset_ball():
-	print("Ball reset!")
 	position = get_viewport_rect().size / 2
 	direction = Vector2.RIGHT.rotated(randf_range(-0.5, 0.5))
 	velocity = direction * speed

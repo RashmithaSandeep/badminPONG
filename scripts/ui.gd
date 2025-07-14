@@ -5,7 +5,6 @@ extends CanvasLayer
 
 func _ready():
 	ScoreManager.score_updated.connect(_on_score_updated)
-	print("UI nodes ready: ", player1_score != null, " ", player2_score != null)
 
 func _on_score_updated(p1_score, p2_score):
 	player1_score.text = str(p1_score)
